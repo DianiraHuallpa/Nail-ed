@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "229424533122",
+    "project_id": "nail-ed",
+    "storage_bucket": "nail-ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229424533122:android:0fd5567329da04078d2e9b",
+        "android_client_info": {
+          "package_name": "com.dianshiro.nailed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3ro-_HX_1NJgGpausxfEVRylNXTQ7TCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229424533122:android:5e3be5de474801018d2e9b",
+        "android_client_info": {
+          "package_name": "com.example.nail_ed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3ro-_HX_1NJgGpausxfEVRylNXTQ7TCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

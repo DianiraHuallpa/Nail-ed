@@ -1,0 +1,98 @@
+{
+    "firestore": {
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    },
+    "functions": [
+      {
+        "source": "functions",
+        "codebase": "default",
+        "ignore": [
+          "node_modules",
+          ".git",
+          "firebase-debug.log",
+          "firebase-debug.*.log",
+          "*.local"
+        ],
+        "predeploy": [
+          "npm --prefix \"$RESOURCE_DIR\" run lint",
+          "npm --prefix \"$RESOURCE_DIR\" run build"
+        ]
+      }
+    ],
+    "storage": {
+      "rules": "storage.rules"
+    },
+    "emulators": {
+      "auth": {
+        "port": 9099
+      },
+      "functions": {
+        "port": 5001
+      },
+      "firestore": {
+        "port": 8080
+      },
+      "ui": {
+        "enabled": true
+      },
+      "singleProjectMode": true
+    },
+    "hosting": {
+      "public": "build/web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(js|css)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=31536000,immutable"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(png|jpg|jpeg|gif|svg|webp)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=31536000,immutable"
+            }
+          ]
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "nail-ed",
+                    "appId": "1:229424533122:android:5e3be5de474801018d2e9b",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "nail-ed",
+                    "configurations": {
+                        "android": "1:229424533122:android:5e3be5de474801018d2e9b",
+                        "ios": "1:229424533122:ios:8c1acb59d9711c0d8d2e9b",
+                        "macos": "1:229424533122:ios:8c1acb59d9711c0d8d2e9b",
+                        "web": "1:229424533122:web:2a82c5d7d7299aab8d2e9b",
+                        "windows": "1:229424533122:web:2a82c5d7d7299aab8d2e9b"
+                    }
+                }
+            }
+        }
+    }
+}
